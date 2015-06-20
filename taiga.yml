@@ -13,8 +13,8 @@ db:
   volumes_from:
     - data
 taigaback:
-  image: htdvisser/taiga-back
-  hostname: dev.example.com
+  image: xdevelsystemas/taiga-back-community
+  hostname: hostname
   environment:
     SECRET_KEY: examplesecretkey
     EMAIL_USE_TLS: True
@@ -27,7 +27,7 @@ taigaback:
   volumes_from:
     - data
 taigafront:
-  image: htdvisser/taiga-front-dist
+  image: xdevelsistemas/taiga-front-dist
   hostname: dev.example.com
   links:
     - taigaback

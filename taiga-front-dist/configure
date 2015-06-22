@@ -19,6 +19,8 @@ mkdir -p /etc/nginx/ssl
 PUBLIC_REGISTER_ENABLED=${PUBLIC_REGISTER_ENABLED:-true}
 API=${API:-/api/v1/}
 
+wget -c https://raw.githubusercontent.com/taigaio/taiga-contrib-slack/0.0.8//front/dist/slack.js -O /usr/local/taiga/taiga-front-dist/dist/js/slack.js
+
 cat > /usr/local/taiga/taiga-front-dist/dist/js/conf.json <<EOL
 
 {
@@ -31,7 +33,7 @@ cat > /usr/local/taiga/taiga-front-dist/dist/js/conf.json <<EOL
   "termsOfServiceUrl": null,
   "maxUploadFileSize": null,
   "gitHubClientId": null,
-  "contribPlugins": [ ]
+  "contribPlugins": ["/js/slack.js"]
 }
 
 EOL

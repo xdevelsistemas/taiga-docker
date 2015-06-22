@@ -36,6 +36,8 @@ DATABASES = {
    }
 }
 
+INSTALLED_APPS += ["taiga_contrib_slack"]
+
 HOST = 'http://${HOSTNAME}/'
 
 MEDIA_ROOT = '/usr/local/taiga/media'

@@ -18,7 +18,7 @@ docker run --name taiga_back_container_name --link postgres_container_name:postg
 
 ## Docker-compose
 
-For a complete taiga installation (``xdevelsistemas/taiga-back`` and ``xdevelsistemas/taiga-front-dist``) you can use this docker-compose configuration:
+For a complete taiga installation (``xdevelsistemas/taiga:taiga-back`` and ``xdevelsistemas/taiga:taiga-front-dist``) you can use this docker-compose configuration:
 
 ```yaml
 data:
@@ -36,7 +36,7 @@ db:
   volumes_from:
     - data
 taigaback:
-  image: xdevelsistemas/taiga-back:stable
+  image: xdevelsistemas/taiga:taiga-back
   hostname: dev.example.com
   environment:
     SECRET_KEY: examplesecretkey
@@ -50,7 +50,7 @@ taigaback:
   volumes_from:
     - data
 taigafront:
-  image: xdevelsystemas/taiga-front-dist:stable
+  image: xdevelsystemas/taiga:taiga-front-dist
   hostname: dev.example.com
   links:
     - taigaback
@@ -62,7 +62,7 @@ taigafront:
 
 ## Database Initialization
 
-To initialize the database, use ``docker exec -it taiga-back bash`` and execute the following commands:
+To initialize the database, use ``docker exec -it xdevelsistemas/taiga:taiga-back bash`` and execute the following commands:
 
 ```bash
 cd /usr/local/taiga/taiga-back/

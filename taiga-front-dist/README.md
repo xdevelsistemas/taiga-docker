@@ -2,7 +2,7 @@
 
 [Taiga](https://taiga.io/) is a project management platform for startups and agile developers & designers who want a simple, beautiful tool that makes work truly enjoyable.
 
-This Docker image can be used for running the Taiga frontend. It works together with the [xdevelsistemas/taiga-back](https://registry.hub.docker.com/u/xdevelsistemas/taiga-back/) image.
+This Docker image can be used for running the Taiga frontend. It works together with the [xdevelsistemas/taiga](https://registry.hub.docker.com/u/xdevelsistemas/taiga/) image.
 
 [![GitHub stars](https://img.shields.io/github/stars/xdevelsistemas/taiga-docker.svg?style=flat-square)](https://github.com/xdevelsistemas/taiga-docker)
 [![GitHub forks](https://img.shields.io/github/forks/xdevelsistemas/taiga-docker.svg?style=flat-square)](https://github.com/xdevelsistemas/taiga-docker)
@@ -10,15 +10,15 @@ This Docker image can be used for running the Taiga frontend. It works together 
 
 ## Running
 
-A [xdevelsistemas/taiga-back](https://registry.hub.docker.com/u/xdevelsistemas/taiga-back/) container should be linked to the taiga-front-dist container. Also connect the volumes of this the taiga-back container if you want to serve the static files for the admin panel.
+A [xdevelsistemas/taiga:taiga-back](https://registry.hub.docker.com/u/xdevelsistemas/taiga:taiga-back/) container should be linked to the taiga-front-dist container. Also connect the volumes of this the taiga-back container if you want to serve the static files for the admin panel.
 
 ```
-docker run --name taiga_front_dist_container_name --link taiga_back_container_name:taigaback --volumes-from taiga_back_container_name xdevelsistemas/taiga-front-dist
+docker run --name taiga_front_dist_container_name --link taiga_back_container_name:taigaback --volumes-from taiga_back_container_name xdevelsistemas/taiga:taiga-front-dist
 ```
 
 ## Docker-compose
 
-For a complete taiga installation (``xdevelsistemas/taiga-back`` and ``xdevelsistemas/taiga-front-dist``) you can use this docker-compose configuration:
+For a complete taiga installation (``xdevelsistemas/taiga:taiga-back`` and ``xdevelsistemas/taiga:taiga-front-dist``) you can use this docker-compose configuration:
 
 ```yaml
 data:

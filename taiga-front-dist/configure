@@ -20,6 +20,8 @@ PUBLIC_REGISTER_ENABLED=${PUBLIC_REGISTER_ENABLED:-true}
 API=${API:-/api/v1/}
 
 wget -c https://raw.githubusercontent.com/taigaio/taiga-contrib-slack/0.0.8//front/dist/slack.js -O /usr/local/taiga/taiga-front-dist/dist/js/slack.js
+wget -c https://raw.githubusercontent.com/taigaio/taiga-contrib-github-auth/0.0.5//front/dist/github_auth.js -O /usr/local/taiga/taiga-front-dist/dist/js/github_auth.js
+wget -c https://raw.githubusercontent.com/taigaio/taiga-contrib-github-auth/0.0.5//front/images/contrib/github-logo.png -O /usr/local/taiga/taiga-front-dist/dist/images/contrib/github_auth.js
 
 cat > /usr/local/taiga/taiga-front-dist/dist/js/conf.json <<EOL
 
@@ -32,8 +34,8 @@ cat > /usr/local/taiga/taiga-front-dist/dist/js/conf.json <<EOL
   "privacyPolicyUrl": null,
   "termsOfServiceUrl": null,
   "maxUploadFileSize": null,
-  "gitHubClientId": null,
-  "contribPlugins": ["/js/slack.js"]
+  "gitHubClientId": "${YOUR-GITHUB-CLIENT-ID}",
+  "contribPlugins": ["/js/slack.js","/js/github_auth.js"]
 }
 
 EOL

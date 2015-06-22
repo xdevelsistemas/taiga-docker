@@ -36,7 +36,8 @@ DATABASES = {
    }
 }
 
-INSTALLED_APPS += ["taiga_contrib_slack"]
+
+INSTALLED_APPS += ["taiga_contrib_slack","taiga_contrib_github_auth"]
 
 HOST = 'http://${HOSTNAME}/'
 

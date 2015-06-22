@@ -15,7 +15,8 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   easy_install lxml && \
   pip install circus gunicorn && \
-  pip install taiga-contrib-slack
+  pip install taiga-contrib-slack && \
+  pip install taiga-contrib-github-auth
 
 
 

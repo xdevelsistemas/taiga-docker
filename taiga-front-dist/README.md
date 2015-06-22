@@ -115,3 +115,5 @@ taigafront:
   * ``/etc/nginx/ssl/`` volume attached with ``ssl.crt`` and ``ssl.key`` files
 * ``SSL_CRT`` SSL certificate value. Valid only when ``SCHEME`` set to https.
 * ``SSL_KEY`` SSL certificate key. Valid only when ``SCHEME`` set to https.
+
+* ``YOUR-GITHUB-CLIENT-ID`` github client auth id

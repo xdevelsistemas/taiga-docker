@@ -35,7 +35,7 @@ cat > /usr/local/taiga/taiga-front-dist/dist/js/conf.json <<EOL
   "privacyPolicyUrl": null,
   "termsOfServiceUrl": null,
   "maxUploadFileSize": null,
-  "gitHubClientId": "${YOUR-GITHUB-CLIENT-ID}",
+  "gitHubClientId": "${TAIGABACK_ENV_TAIGA_GITHUB_CLIENT_ID}",
   "contribPlugins": ["/js/slack.js","/js/github_auth.js"]
 }
 

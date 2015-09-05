@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y git wget && rm -rf /var/lib/apt/lists/*
 # NginX Configuration
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD mime.types /etc/nginx/mime.types
+RUN mkdir /etc/nginx/conf.d
 ADD web-http.conf /etc/nginx/conf.d/web-http.conf
 ADD web-https.conf /etc/nginx/conf.d/web-https.conf
 

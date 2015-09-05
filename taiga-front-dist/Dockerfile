@@ -27,6 +27,8 @@ ADD ./configure /usr/local/taiga/configure
 ADD ./start /usr/local/taiga/start
 RUN chmod +x /usr/local/taiga/configure /usr/local/taiga/start
 
+VOLUME /etc/nginx/conf_mount.d
+
 EXPOSE 80 443
 
 CMD ["/usr/local/taiga/start"]

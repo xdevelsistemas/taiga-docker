@@ -31,7 +31,7 @@ cat > /usr/local/taiga/taiga-front-dist/dist/js/conf.json <<EOL
   "eventsUrl": null,
   "debug": false,
   "publicRegisterEnabled": ${PUBLIC_REGISTER_ENABLED},
-  "defaultLanguage": "pt-BR",
+  "defaultLanguage": "pt-br",
   "feedbackEnabled": true,
   "privacyPolicyUrl": null,
   "termsOfServiceUrl": null,

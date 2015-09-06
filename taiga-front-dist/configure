@@ -16,7 +16,7 @@ mkdir -p /etc/nginx/ssl
 [ ! -z "${SSL_CRT}" ] && echo "${SSL_CRT}" > /etc/nginx/ssl/ssl.crt
 [ ! -z "${SSL_KEY}" ] && echo "${SSL_KEY}" > /etc/nginx/ssl/ssl.key
 
-PUBLIC_REGISTER_ENABLED=${PUBLIC_REGISTER_ENABLED:-true}
+PUBLIC_REGISTER_ENABLED=${PUBLIC_REGISTER_ENABLED:-false}
 API=${API:-/api/v1/}
 
 wget -c https://raw.githubusercontent.com/taigaio/taiga-contrib-slack/0.0.8//front/dist/slack.js -O /usr/local/taiga/taiga-front-dist/dist/js/slack.js
@@ -31,6 +31,7 @@ cat > /usr/local/taiga/taiga-front-dist/dist/js/conf.json <<EOL
   "eventsUrl": null,
   "debug": false,
   "publicRegisterEnabled": ${PUBLIC_REGISTER_ENABLED},
+  "defaultLanguage": "pt-BR",
   "feedbackEnabled": true,
   "privacyPolicyUrl": null,
   "termsOfServiceUrl": null,

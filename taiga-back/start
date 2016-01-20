@@ -10,10 +10,12 @@ python manage.py collectstatic --noinput
 #while ! nc -z $POSTGRES_PORT_5432_TCP_ADDR 5432; do
 #  sleep 1
 #done
+
 pip install --upgrade -r requirements.txt
 python manage.py migrate --noinput
 python manage.py migrate taiga_contrib_slack
-
+python manage.py collectstatic --noinput
+circusctl reload taiga
 chown -R taiga /usr/local/taiga/media /usr/local/taiga/static /usr/local/taiga/logs
 
 /usr/local/bin/circusd /usr/local/taiga/circus.ini

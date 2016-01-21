@@ -24,7 +24,7 @@ wget -c https://raw.githubusercontent.com/taigaio/taiga-contrib-github-auth/0.0.
 mkdir -p /usr/local/taiga/taiga-front-dist/dist/images/contrib
 wget -c https://raw.githubusercontent.com/taigaio/taiga-contrib-github-auth/0.0.5//front/images/contrib/github-logo.png -O /usr/local/taiga/taiga-front-dist/dist/images/contrib/github_auth.js
 
-cat > /usr/local/taiga/taiga-front-dist/dist/js/conf.json <<EOL
+cat > /usr/local/taiga/taiga-front-dist/dist/conf.json <<EOL
 
 {
   "api": "${API}",

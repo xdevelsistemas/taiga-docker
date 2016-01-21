@@ -17,6 +17,4 @@ python manage.py migrate taiga_contrib_slack
 python manage.py collectstatic --noinput
 circusctl reload taiga
 chown -R taiga /usr/local/taiga/media /usr/local/taiga/static /usr/local/taiga/logs
-#provisório até ver o problema do circus
-python manage.py runserver
-#/usr/local/bin/circusd /usr/local/taiga/circus.ini
+/usr/local/bin/circusd /usr/local/taiga/circus.ini

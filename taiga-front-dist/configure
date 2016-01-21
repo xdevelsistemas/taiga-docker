@@ -19,10 +19,10 @@ mkdir -p /etc/nginx/ssl
 PUBLIC_REGISTER_ENABLED=${PUBLIC_REGISTER_ENABLED:-false}
 API=${API:-/api/v1/}
 
-wget -c https://raw.githubusercontent.com/taigaio/taiga-contrib-slack/0.0.8//front/dist/slack.js -O /usr/local/taiga/taiga-front-dist/dist/js/slack.js
-wget -c https://raw.githubusercontent.com/taigaio/taiga-contrib-github-auth/0.0.5//front/dist/github_auth.js -O /usr/local/taiga/taiga-front-dist/dist/js/github_auth.js
-mkdir -p /usr/local/taiga/taiga-front-dist/dist/images/contrib
-wget -c https://raw.githubusercontent.com/taigaio/taiga-contrib-github-auth/0.0.5//front/images/contrib/github-logo.png -O /usr/local/taiga/taiga-front-dist/dist/images/contrib/github_auth.js
+mkdir -p /usr/local/taiga/taiga-front-dist/dist/plugins
+
+svn export "https://github.com/taigaio/taiga-contrib-github-auth/tags/1.9.1/front/dist"  "/usr/local/taiga/taiga-front-dist/dist/plugins/github-auth"
+svn export "https://github.com/taigaio/taiga-contrib-slack/tags/1.9.1/front/dist"  "/usr/local/taiga/taiga-front-dist/dist/plugins/slack"
 
 cat > /usr/local/taiga/taiga-front-dist/dist/conf.json <<EOL
 
@@ -37,7 +37,7 @@ cat > /usr/local/taiga/taiga-front-dist/dist/conf.json <<EOL
   "termsOfServiceUrl": null,
   "maxUploadFileSize": null,
   "gitHubClientId": "${TAIGABACK_ENV_TAIGA_GITHUB_CLIENT_ID}",
-  "contribPlugins": ["/js/github_auth.js","/js/slack.js"]
+  "contribPlugins": ["/plugins/github-auth/github-auth.json","/plugins/slack/slack.json"]
 }
 
 EOL

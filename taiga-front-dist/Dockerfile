@@ -3,7 +3,7 @@ FROM nginx:1.7
 MAINTAINER Hylke Visser <htdvisser@gmail.com>
 
 # Install Git
-RUN apt-get update && apt-get install -y git wget && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y subversion git wget && rm -rf /var/lib/apt/lists/*
 
 # NginX Configuration
 ADD nginx.conf /etc/nginx/nginx.conf

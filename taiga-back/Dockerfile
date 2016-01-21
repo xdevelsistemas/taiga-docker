@@ -14,8 +14,9 @@ RUN \
   apt-get install -y python-setuptools && \
   rm -rf /var/lib/apt/lists/* && \
   easy_install lxml && \
-  pip install circus gunicorn && \
+  pip install gunicorn && \
   pip install taiga-contrib-slack && \
+  pip install git+https://github.com/circus-tent/circus.git@master &&\
   pip install taiga-contrib-github-auth
 
 

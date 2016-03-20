@@ -9,8 +9,8 @@ upstream taiga-back {
 EOL
 
 # Configure HTTP or HTTPS for nginx proxy
-#WEB_CONFIG=web-${SCHEME:-http}.conf
-#sed -i "/include .*.conf;/c\  include ${WEB_CONFIG};" /etc/nginx/nginx.conf
+WEB_CONFIG=web-${SCHEME:-http}.conf
+sed -i "/include .*.conf;/c\  include ${WEB_CONFIG};" /etc/nginx/nginx.conf
 
 mkdir -p /etc/nginx/ssl
 [ ! -z "${SSL_CRT}" ] && echo "${SSL_CRT}" > /etc/nginx/ssl/ssl.crt

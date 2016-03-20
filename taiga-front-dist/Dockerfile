@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y subversion git wget && rm -rf /var/lib/
 # NginX Configuration
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD mime.types /etc/nginx/mime.types
-ADD conf.d/web-http.conf /etc/nginx/conf.d/web-http.conf
+ADD web-http.conf /etc/nginx/web-http.conf
+ADD web-https.conf /etc/nginx/web-https.conf
 
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
@@ -26,7 +27,6 @@ ADD ./configure /usr/local/taiga/configure
 ADD ./start /usr/local/taiga/start
 RUN chmod +x /usr/local/taiga/configure /usr/local/taiga/start
 
-VOLUME /etc/nginx/conf_mount.d
 
 EXPOSE 80 443
 

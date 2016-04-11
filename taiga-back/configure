@@ -31,7 +31,7 @@ from .common import *
 
 DATABASES = {
    'default': {
-       'ENGINE': 'transaction_hooks.backends.postgresql',
+       'ENGINE': 'django.db.backends.postgresql',
        'NAME': '${POSTGRES_USER}',
        'USER': '${POSTGRES_USER}',
        'PASSWORD': '${POSTGRES_PASSWORD}',

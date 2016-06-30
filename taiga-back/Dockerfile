@@ -6,8 +6,8 @@ MAINTAINER Hylke Visser <htdvisser@gmail.com>
 RUN \
   apt-get update -qq && \
   apt-get install -y netcat && \
-  apt-get install libxml2-dev && \
-  apt-get install libxslt1-dev && \
+  apt-get install -y libxml2-dev && \
+  apt-get install -y libxslt1-dev && \
   apt-get install -y python-libxml2 && \
   apt-get install -y python-libxslt1 && \
   apt-get install -y python-dev && \
@@ -27,7 +27,7 @@ RUN \
 RUN \
   mkdir -p /usr/local/taiga && \
   useradd -d /usr/local/taiga taiga && \
-  git clone https://github.com/xdevelsistemas/taiga-back-community.git /usr/local/taiga/taiga-back && \
+  git clone https://github.com/alvarollmenezes/taiga-back.git /usr/local/taiga/taiga-back && \
   mkdir /usr/local/taiga/media /usr/local/taiga/static /usr/local/taiga/logs && \
   cd /usr/local/taiga/taiga-back && \
   git checkout stable && \
@@ -39,6 +39,7 @@ RUN \
 
 # Add Taiga Configuration
 ADD ./local.py /usr/local/taiga/taiga-back/settings/local.py
+RUN chmod a+wr /usr/local/taiga/taiga-back/settings/local.py
 
 # Configure and Start scripts
 ADD ./configure /usr/local/taiga/configure

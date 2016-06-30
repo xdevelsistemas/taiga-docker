@@ -27,7 +27,7 @@ RUN \
 RUN \
   mkdir -p /usr/local/taiga && \
   useradd -d /usr/local/taiga taiga && \
-  git clone https://github.com/alvarollmenezes/taiga-back.git /usr/local/taiga/taiga-back && \
+  git clone https://github.com/xdevelsistemas/taiga-back-community.git /usr/local/taiga/taiga-back && \
   mkdir /usr/local/taiga/media /usr/local/taiga/static /usr/local/taiga/logs && \
   cd /usr/local/taiga/taiga-back && \
   git checkout stable && \

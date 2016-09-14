@@ -6,8 +6,8 @@ MAINTAINER Hylke Visser <htdvisser@gmail.com>
 RUN \
   apt-get update -qq && \
   apt-get install -y netcat && \
-  apt-get install libxml2-dev && \
-  apt-get install libxslt1-dev && \
+  apt-get install -y libxml2-dev && \
+  apt-get install -y libxslt1-dev && \
   apt-get install -y python-libxml2 && \
   apt-get install -y python-libxslt1 && \
   apt-get install -y python-dev && \
@@ -39,6 +39,7 @@ RUN \
 
 # Add Taiga Configuration
 ADD ./local.py /usr/local/taiga/taiga-back/settings/local.py
+RUN chmod a+wr /usr/local/taiga/taiga-back/settings/local.py
 
 # Configure and Start scripts
 ADD ./configure /usr/local/taiga/configure

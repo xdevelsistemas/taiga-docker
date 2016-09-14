@@ -24,6 +24,15 @@ mkdir -p /usr/local/taiga/taiga-front-dist/dist/plugins
 svn export "https://github.com/taigaio/taiga-contrib-github-auth/tags/2.1.1/front/dist"  "/usr/local/taiga/taiga-front-dist/dist/plugins/github-auth"
 svn export "https://github.com/taigaio/taiga-contrib-slack/tags/2.1/front/dist"  "/usr/local/taiga/taiga-front-dist/dist/plugins/slack"
 
+cat > /usr/local/taiga/taiga-front-dist/dist/plugins/github-auth/githug-auth.html << EOL
+
+<div tg-github-login-button="tg-github-login-button">
+<a href="" title="Enter with your github account" class="button button-auth">
+<img src="/plugins/github-auth/images/github-logo.png"><span>Sign in with Github</span></a></div>
+
+EOL
+
+
 cat > /usr/local/taiga/taiga-front-dist/dist/conf.json <<EOL
 
 {

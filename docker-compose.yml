@@ -1,0 +1,34 @@
+taiga-back:
+  environment:
+    API_DOMAIN: localhost
+    API_SCHEME: http
+    DEBUG: 'False'
+    DEFAULT_FROM_EMAIL: alerta@xdevel.com.br
+    FRONT_DOMAIN: localhost
+    FRONT_SCHEME: http
+    HOSTNAME: localhost
+    MEDIA_URL: http://localhost/media/
+    POSTGRES_HOST: postgres
+    POSTGRES_PASSWORD: taiga
+    POSTGRES_USER: taiga
+    PUBLIC_REGISTER_ENABLED: 'False'
+    STATIC_URL: http://localhost/static/
+    TEMPLATE_DEBUG: 'False'
+  build: taiga-back
+  links:
+  - 'postgres:'
+taiga-front:
+  ports:
+  - "80:80"
+  environment:
+  build: taiga-front-dist
+  links:
+  - taiga-back:taigaback
+postgres:
+  environment:
+    POSTGRES_DB: taiga
+    POSTGRES_PASSWORD: taiga
+    POSTGRES_USER: taiga
+  tty: true
+  image: xdevelsistemas/debian-env:postgresql-env
+  stdin_open: true
